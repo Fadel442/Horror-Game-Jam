@@ -19,12 +19,14 @@ public class PlayerMovement : MonoBehaviour
         //saat menekan "A" atau "D" akan menambahkan kecepatan berlalri dengan nilai dari 
         //runSpeed
         horizontalMove = Input.GetAxisRaw("Horizontal") * runSpeed;
+        Debug.Log(horizontalMove);
         animator.SetFloat("Speed", MathF.Abs(horizontalMove));
 
         //karakter dapat melakukan jump
         //apabila menekan space jump bernilai true
         if (Input.GetButtonDown("Jump"))
         {
+            Debug.Log("jumping");
             jump = true;
             animator.SetBool("isJumping", true);
         }
